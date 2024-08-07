@@ -1,15 +1,24 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
+<div class="flex flex-col lg:flex-row-reverse w-full justify-start lg:justify-end pb-6">
+  <div>
+    <div>
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-
-    <%= render @lesson %>
-
-    <%= link_to "Edit this lesson", edit_lesson_path(@lesson), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to lessons", lessons_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this lesson", @lesson, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
+
+    <%= (@lesson.video.present?) ? (video_tag @lesson.video, autoplay: false, controls: true, class: "rounded") : "No video available" %>
+
+    <div class="my-2 border p-4 rounded">
+      <h1 class="text-2xl font-semibold"><%= @lesson.title %></h1>
+      <p class="text-gray-700"><%= @lesson.description %></p>
+    </div>
+
+    <div class="my-6 lg:mb-0">
+      <%= link_to "Mark as complete", course_lesson_path(@course, @lesson), data: { 'turbo-method' => :put }, class: "bg-green-500 rounded hover:bg-green-600 text-white-50 px-4 py-2" %>
+    </div>
+  </div>
+
+  <div class="sidebar_container lg:min-w-60 lg:mr-4 lg:overflow-y-scroll">
+    <%= render "sidebar", course: @course %>
   </div>
 </div>
