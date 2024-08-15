@@ -1,15 +1,32 @@
 # frozen_string_literal: true
 
+# This controller handles all actions related to courses.
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
 
   # GET /courses or /courses.json
   def index
     @courses = Course.all
+    @user_unlocked_courses = current_user&.course_users&.pluck(:course_id)
+    @user_started_courses = current_user&.lesson_users&.joins(:lesson)&.pluck(:course_id)&.uniq
+
+    return unless @user_started_courses.present?
+
+    @user_course_progresses = @user_started_courses.map do |course_id|
+      course = Course.find(course_id)
+      completed_lessons = current_user&.lesson_users&.joins(:lesson)&.where(completed: true, lesson: { course: course_id })&.count
+      {
+        course_id:,
+        completed_percentage: (completed_lessons.to_f / course.lessons.count * 100).to_i
+      }
+    end
   end
 
   # GET /courses/1 or /courses/1.json
-  def show; end
+  def show
+    @completed_lessons = current_user&.lesson_users&.joins(:lesson)&.where(completed: true, lesson: { course: @course })&.pluck(:lesson_id)
+    @user_unlocked_course = current_user&.course_users&.where(course: @course)&.exists?
+  end
 
   # GET /courses/new
   def new
