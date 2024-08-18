@@ -71,6 +71,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+gem 'acts_as_list', '~> 1.0'
 gem 'devise', '~> 4.9'
 gem 'font-awesome-sass', '~> 6.5', '>= 6.5.2'
 gem 'stripe', '~> 10.3'
