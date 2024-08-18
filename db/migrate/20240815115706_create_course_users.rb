@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCourseUsers < ActiveRecord::Migration[7.1]
   def change
     create_table :course_users do |t|
