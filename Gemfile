@@ -72,6 +72,7 @@ group :test do
 end
 
 gem 'acts_as_list', '~> 1.0'
+gem 'aws-sdk-s3'
 gem 'devise', '~> 4.9'
 gem 'font-awesome-sass', '~> 6.5', '>= 6.5.2'
 gem 'groupdate', '~> 6.4'
