@@ -1,0 +1,23 @@
+databases:
+  - name: learn_wave
+    databaseName: learn_wave
+    user: learn_wave
+    plan: free
+
+services:
+  - type: web
+    name: learn_wave
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "./bin/rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: learn_wave
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
