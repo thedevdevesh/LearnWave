@@ -1,24 +1,117 @@
-# README
+# Learning Platform 🎓
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to our comprehensive learning platform - a robust Rails application designed to deliver an engaging educational experience for both students and educators.
 
-Things you may want to cover:
+<!-- ![Platform Overview](docs/images/platform-overview.gif) -->
 
-* Ruby version
+## 📋 Project Description
 
-* System dependencies
+The Learning Platform is a modern, full-featured educational system that enables:
+- Seamless course delivery and consumption
+- Interactive lesson management
+- Secure user authentication
+- Flexible content administration
+- Integrated payment processing
 
-* Configuration
 
-* Database creation
+## ⚙️ System Requirements
 
-* Database initialization
+* Ruby 3.2.2
+* PostgreSQL 12+
+* Node.js 14+
+* Yarn 1.22+
 
-* How to run the test suite
+## 🚀 Quick Start Guide
 
-* Services (job queues, cache servers, search engines, etc.)
+### Initial Setup
 
-* Deployment instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/learning-platform.git
+   cd learning-platform
+   ```
 
-* ...
+2. Install dependencies:
+   ```bash
+   bundle install
+   yarn install
+   ```
+
+3. Configure environment:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+4. Setup database:
+   ```bash
+   rails db:create
+   rails db:migrate
+   rails db:seed  # Optional: Adds sample data
+   ```
+
+### Running the Application
+
+1. Start the development server:
+   ```bash
+   rails server
+   ```
+
+2. Access the application at http://localhost:3000
+
+## 🎯 Key Features
+
+### For Students
+* Intuitive course browsing and enrollment
+* Progress tracking across courses
+* Interactive lesson completion
+* Secure payment processing
+* Mobile-responsive design
+
+<!-- ![Student Dashboard](docs/images/student-dashboard.png) -->
+
+### For Instructors
+* Comprehensive course management
+* Dynamic lesson creation and sequencing
+* Rich content editor with media support
+* Student progress monitoring
+* Revenue tracking
+
+<!-- ![Course Management](docs/images/course-management.png) -->
+
+### For Administrators
+* User management system
+* Content moderation tools
+* Analytics dashboard
+* System configuration controls
+* Payment gateway integration
+
+<!-- ![Admin Dashboard](docs/images/admin-dashboard.png) -->
+
+## 🔧 Development
+
+### Running Tests
+
+```bash
+rails test                 # Run all tests
+rails test:system         # Run system tests
+rails test:controllers    # Run controller tests
+```
+
+### API Documentation
+
+#### User Routes
+- `GET /courses` - Browse available courses
+- `GET /courses/:id` - View course details
+- `GET /lessons/:id` - Access lesson content
+- `POST /enrollments` - Enroll in a course
+
+#### Admin Routes
+- `GET /admin` - Access admin dashboard
+- `GET /admin/courses` - Manage course catalog
+- `GET /admin/courses/:id/lessons` - Organize course lessons
+- `PATCH /admin/courses/:course_id/lessons/:id/move` - Adjust lesson sequence
+
+## Deployment
+
+This application is configured for deployment on Render.com using the included render.yaml configuration file.
