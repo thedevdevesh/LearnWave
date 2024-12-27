@@ -2,7 +2,7 @@
 
 Welcome to our comprehensive learning platform - a robust Rails application designed to deliver an engaging educational experience for both students and educators.
 
-<!-- ![Platform Overview](docs/images/platform-overview.gif) -->
+![Platform Overview](docs/images/learn-wave.gif)
 
 ## 📋 Project Description
 
@@ -28,7 +28,7 @@ The Learning Platform is a modern, full-featured educational system that enables
 1. Clone the repository:
    ```bash
    git clone [repo url]
-   cd learning-platform
+   cd LearnWave
    ```
 
 2. Install dependencies:
@@ -68,7 +68,6 @@ The Learning Platform is a modern, full-featured educational system that enables
 * Secure payment processing
 * Mobile-responsive design
 
-<!-- ![Student Dashboard](docs/images/student-dashboard.png) -->
 
 ### For Instructors
 * Comprehensive course management
@@ -77,7 +76,6 @@ The Learning Platform is a modern, full-featured educational system that enables
 * Student progress monitoring
 * Revenue tracking
 
-<!-- ![Course Management](docs/images/course-management.png) -->
 
 ### For Administrators
 * User management system
@@ -86,7 +84,6 @@ The Learning Platform is a modern, full-featured educational system that enables
 * System configuration controls
 * Payment gateway integration
 
-<!-- ![Admin Dashboard](docs/images/admin-dashboard.png) -->
 
 ## 🔧 Development
 
