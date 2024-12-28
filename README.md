@@ -61,6 +61,23 @@ The Learning Platform is a modern, full-featured educational system that enables
 
 ## 🎯 Key Features
 
+### Technical Stack
+* Ruby on Rails 7
+* Hotwire for real-time updates
+* PostgreSQL database
+* Stripe payment integration
+* Tailwind CSS for styling
+
+### Features
+* User authentication system
+* Video and image upload capabilities
+* Premium content management
+* Progress tracking functionality
+* WYSIWYG editor integration
+* Email notification system
+* Stripe payment processing
+* Admin dashboard interface
+
 ### For Students
 * Intuitive course browsing and enrollment
 * Progress tracking across courses
